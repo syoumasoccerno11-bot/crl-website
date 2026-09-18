@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="ringGrad" x1="20%" y1="0%" x2="60%" y2="100%">
+<stop offset="0%" stop-color="#5BCBF0"/>
+<stop offset="45%" stop-color="#1E63C4"/>
+<stop offset="100%" stop-color="#0A1560"/>
+</linearGradient>
+<linearGradient id="rGrad" x1="10%" y1="0%" x2="90%" y2="100%">
+<stop offset="0%" stop-color="#3FD0D8"/>
+<stop offset="55%" stop-color="#2FBF93"/>
+<stop offset="100%" stop-color="#3DBD6E"/>
+</linearGradient>
+</defs>
+<path d="M 108 24 A 76 76 0 1 0 108 176"
+  fill="none" stroke="url(#ringGrad)" stroke-width="34" stroke-linecap="round"/>
+<path d="M 108 46
+  C 133 46 149 59 149 79
+  C 149 99 133 112 108 112
+  L 108 46 Z"
+  fill="url(#rGrad)"/>
+<path d="M 108 112 L 128 112 L 152 168 L 122 168 L 100 130 Z" fill="url(#rGrad)"/>
+<rect x="80" y="46" width="28" height="122" fill="url(#rGrad)"/>
+</svg>
