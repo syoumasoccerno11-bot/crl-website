@@ -3509,7 +3509,7 @@ main section[id] {
 @keyframes crlGlare { 0% { opacity: 0.45; background-position: 0 0, 0% 0; } 100% { opacity: 1; background-position: 0 0, 60% 0; } }
 .hero-live .hero-shade { background: linear-gradient(0deg, rgba(4, 30, 70, 0.5) 0%, rgba(4, 30, 70, 0) 55%), linear-gradient(90deg, rgba(4, 30, 70, 0.4) 0%, rgba(4, 30, 70, 0) 70%); }
 
-@media (min-width: 769px) {
+@media all {
   .hero-live { min-height: 0; padding: 0; aspect-ratio: 1672 / 941; }
   .hero-photo-img { background-image: url("images/crl-hero.jpg"); background-size: 100% 100%; background-position: center; }
   .hero-live .hero-shade, .hero-live .hero-scroll, .hero-live .hero-waves { display: none; }
@@ -3525,7 +3525,7 @@ main section[id] {
 .hero-photo-img { animation: none; }
 .hero-cover { display: none; }
 @keyframes crlCoverOut { to { opacity: 0; } }
-@media (min-width: 769px) {
+@media all {
   .hero-cover { display: block; position: absolute; inset: 0; background: url("images/crl-hero-clean.jpg") center / 100% 100% no-repeat; opacity: 1; animation: crlCoverOut 1.6s ease-in-out forwards; }
   .hero-cover-a { clip-path: inset(4.68% 78.47% 89.8% 4.19%); animation-delay: 0.5s; }
   .hero-cover-b { clip-path: inset(19.13% 65.31% 68.54% 5.74%); animation-delay: 0.9s; }
@@ -3543,7 +3543,7 @@ main section[id] {
 .hero-sky { display: none; }
 @keyframes skyDrift1 { from { background-position: 72.016% 60.781%; } to { background-position: 75.216% 60.781%; } }
 @keyframes skyDrift2 { from { background-position: 3.6% 66.907%; } to { background-position: 0.0% 66.907%; } }
-@media (min-width: 769px) {
+@media all {
   .hero-sky { display: block; position: absolute; pointer-events: none; background: url("images/crl-hero.jpg") no-repeat;
     -webkit-mask-image: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent), linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent);
     -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent), linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent); mask-composite: intersect; }
@@ -3552,11 +3552,6 @@ main section[id] {
 }
 @media (prefers-reduced-motion: reduce) { .hero-sky { animation: none !important; } }
 
-/* Hero: on phones, place the copy near the top instead of the bottom */
-@media (max-width: 768px) {
-  .hero-live { align-items: flex-start; padding: clamp(56px, 11svh, 110px) 20px 140px; }
-  .hero-live .hero-shade { background: linear-gradient(180deg, rgba(4, 30, 70, 0.45) 0%, rgba(4, 30, 70, 0) 50%), linear-gradient(90deg, rgba(4, 30, 70, 0.3) 0%, rgba(4, 30, 70, 0) 70%); }
-}
 
 /* Company info: one-line cell and stacked list */
 .info-nowrap { white-space: nowrap; }
