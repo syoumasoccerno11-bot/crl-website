@@ -235,3 +235,15 @@ void main() {
     });
   }
 })();
+
+(function homeHeader() {
+  const header = document.querySelector(".home .site-header");
+  const hero = document.querySelector(".hero-live");
+  if (!header || !hero) return;
+  const update = () => {
+    header.classList.toggle("is-solid", window.scrollY > hero.offsetHeight - header.offsetHeight - 8);
+  };
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
