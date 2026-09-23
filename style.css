@@ -3555,3 +3555,9 @@ main section[id] {
   .hero-sky-2 { left: 0.0%; top: 59.086%; width: 39.474%; height: 11.69%; background-size: 253.33% 855.45%; background-position: 3.6% 66.907%; animation: skyDrift2 34s ease-in-out infinite alternate; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-sky { animation: none !important; } }
+
+/* Hero: on phones, place the copy near the top instead of the bottom */
+@media (max-width: 768px) {
+  .hero-live { align-items: flex-start; padding: clamp(56px, 11svh, 110px) 20px 140px; }
+  .hero-live .hero-shade { background: linear-gradient(180deg, rgba(4, 30, 70, 0.45) 0%, rgba(4, 30, 70, 0) 50%), linear-gradient(90deg, rgba(4, 30, 70, 0.3) 0%, rgba(4, 30, 70, 0) 70%); }
+}
