@@ -3217,10 +3217,6 @@ img {
     display: none;
   }
 
-  .intro-copy .intro-lead br,
-  .intro-copy p br {
-    display: none;
-  }
 }
 
 .hero-live .wave-divider {
@@ -3576,4 +3572,11 @@ main section[id] {
 }
 @media (max-width: 359px) {
   .info-nowrap, .info-list li { white-space: normal; }
+}
+
+/* Intro copy: keep the same line breaks on phones; long lines wrap only between phrases */
+.intro-copy .phrase { display: inline-block; }
+@media (max-width: 768px) {
+  .intro-copy p { font-size: 1rem; line-height: 2; }
+  .intro-copy .intro-lead { font-size: 1.1rem; line-height: 1.9; }
 }
