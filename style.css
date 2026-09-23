@@ -3568,10 +3568,10 @@ main section[id] {
 @media (max-width: 768px) {
   .info-note { font-size: min(0.86em, 3.3vw); }
   .info-table th { white-space: nowrap; }
-  .info-list li { white-space: nowrap; font-size: min(1em, 3.9vw); }
+  .info-list li, .info-oneline { white-space: nowrap; font-size: min(1em, 3.9vw); }
 }
 @media (max-width: 359px) {
-  .info-nowrap, .info-list li { white-space: normal; }
+  .info-nowrap, .info-list li, .info-oneline { white-space: normal; }
 }
 
 /* Intro copy: keep the same line breaks on phones; long lines wrap only between phrases */
