@@ -3575,3 +3575,15 @@ main section[id] {
   .intro-copy p { font-size: 1rem; line-height: 2; }
   .intro-copy .intro-lead { font-size: 1.1rem; line-height: 1.9; }
 }
+
+/* Hero (PC): fill the first screen on landscape screens; the image keeps its proportions and covers the area */
+@media (min-width: 769px) and (min-aspect-ratio: 3/2) {
+  .hero-live { --hero-h: max(460px, calc(100svh - 85px)); aspect-ratio: auto; height: var(--hero-h); }
+  .hero-live .hero-photo-zoom {
+    inset: auto; left: 50%; top: 50%;
+    width: max(100%, calc(var(--hero-h) * 1672 / 941)); aspect-ratio: 1672 / 941;
+    margin-left: calc(max(100%, calc(var(--hero-h) * 1672 / 941)) / -2);
+    margin-top: calc(max(100%, calc(var(--hero-h) * 1672 / 941)) * -941 / 3344);
+  }
+  .hero-live .hero-scroll { display: flex; right: 32px; bottom: 32px; }
+}
