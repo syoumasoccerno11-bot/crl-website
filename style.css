@@ -3561,3 +3561,19 @@ main section[id] {
   .hero-live { align-items: flex-start; padding: clamp(56px, 11svh, 110px) 20px 140px; }
   .hero-live .hero-shade { background: linear-gradient(180deg, rgba(4, 30, 70, 0.45) 0%, rgba(4, 30, 70, 0) 50%), linear-gradient(90deg, rgba(4, 30, 70, 0.3) 0%, rgba(4, 30, 70, 0) 70%); }
 }
+
+/* Company info: one-line cell and stacked list */
+.info-nowrap { white-space: nowrap; }
+.info-list { list-style: none; margin: 0; padding: 0; }
+.info-list li { position: relative; padding-left: 1em; }
+.info-list li + li { margin-top: 6px; }
+.info-list li::before { content: ""; position: absolute; left: 0; top: 0.8em; width: 5px; height: 5px; border-radius: 50%; background: var(--color-accent); }
+.info-note { font-size: 0.86em; color: var(--color-text-muted); }
+@media (max-width: 768px) {
+  .info-note { font-size: min(0.86em, 3.3vw); }
+  .info-table th { white-space: nowrap; }
+  .info-list li { white-space: nowrap; font-size: min(1em, 3.9vw); }
+}
+@media (max-width: 359px) {
+  .info-nowrap, .info-list li { white-space: normal; }
+}
