@@ -193,6 +193,7 @@ void main() {
   if (!hero) return;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce) return;
+  const phone = window.matchMedia("(max-width: 768px)");
 
   const inner = hero.querySelector(".hero-inner-live");
   const canvas = hero.querySelector(".hero-canvas");
@@ -202,7 +203,7 @@ void main() {
   function update() {
     ticking = false;
     const h = hero.offsetHeight || 1;
-    const p = Math.min(1, Math.max(0, window.scrollY / (h * 0.85)));
+    const p = phone.matches ? 0 : Math.min(1, Math.max(0, window.scrollY / (h * 0.85)));
     if (inner) {
       inner.style.transform = "translateY(" + (p * -14).toFixed(1) + "px)";
       inner.style.opacity = Math.max(0, 1 - p * 1.1).toFixed(3);

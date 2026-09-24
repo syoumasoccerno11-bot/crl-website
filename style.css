@@ -3623,3 +3623,9 @@ main section[id] {
   .home .hero-live { height: max(560px, 100svh); padding-top: calc(85px + clamp(40px, 8svh, 88px)); }
   .home .hero-live .hero-shade { background: linear-gradient(180deg, rgba(4, 30, 70, 0.6) 0%, rgba(4, 30, 70, 0.2) 40%, rgba(4, 30, 70, 0) 60%, rgba(4, 30, 70, 0.25) 100%); }
 }
+
+/* Home (phone): logo and menu scroll away with the photo; the photo itself stays still */
+@media (max-width: 768px) {
+  .home .site-header { position: absolute; }
+  .home .hero-live .hero-photo-zoom, .home .hero-live .hero-photo-img, .home .hero-live .hero-glare { animation: none; transform: none; }
+}
