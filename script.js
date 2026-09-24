@@ -260,3 +260,22 @@ void main() {
   });
   update();
 })();
+
+// Links like business.html#housing: land exactly on the section, even if images or fonts shift the layout while loading
+(function landOnHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  const root = document.documentElement;
+  const jump = () => {
+    const prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    target.scrollIntoView({ block: "start" });
+    root.style.scrollBehavior = prev;
+  };
+  window.addEventListener("load", () => {
+    jump();
+    setTimeout(jump, 300);
+  });
+})();
