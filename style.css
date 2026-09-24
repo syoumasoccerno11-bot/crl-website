@@ -3630,3 +3630,8 @@ main section[id] {
   .home .hero-live .hero-shade { background: linear-gradient(180deg, rgba(4, 30, 70, 0.6) 0%, rgba(4, 30, 70, 0.2) 40%, rgba(4, 30, 70, 0) 60%, rgba(4, 30, 70, 0.25) 100%); }
   .home .hero-live .hero-photo-zoom, .home .hero-live .hero-photo-img, .home .hero-live .hero-glare { animation: none; transform: none; }
 }
+
+/* Phones: wrap long sentences only between phrases */
+@media (max-width: 768px) {
+  .ph { display: inline-block; }
+}
