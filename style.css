@@ -3604,28 +3604,25 @@ main section[id] {
 
 .logo-light { display: none; }
 
-/* Home (phone): header floats over the hero photo, turns solid after the photo */
+/* Home (phone): logo scrolls away with the photo; only the menu button stays pinned.
+   The photo height is fixed in px by script.js (--hero-vh) so in-app browsers resizing
+   their toolbars during scroll do not rescale the photo. */
 @media (max-width: 768px) {
-  .home .site-header { position: fixed; left: 0; right: 0; background: transparent; border-bottom-color: transparent; backdrop-filter: none; transition: background 0.3s ease, border-color 0.3s ease; }
+  .home .site-header { position: absolute; left: 0; right: 0; background: transparent; border-bottom-color: transparent; backdrop-filter: none; }
   .home .site-header .logo-dark { display: none; }
   .home .site-header .logo-light { display: block; }
+  .home .site-header .nav-toggle { position: fixed; top: 20px; right: 16px; z-index: 120; width: 44px; height: 44px; padding: 11px 8px; margin: 0; box-sizing: border-box; border-radius: 50%; background: transparent; box-shadow: none; transition: background 0.3s ease, box-shadow 0.3s ease; }
   .home .site-header .nav-toggle span { background: #fff; transition: background 0.3s ease; }
-  .home .site-header.is-solid,
-  .home .site-header:has(.nav-list.open) { background: rgba(255, 255, 255, 0.95); border-bottom-color: var(--color-border); backdrop-filter: blur(6px); }
-  .home .site-header.is-solid .logo-dark,
+  .home .site-header.is-solid .nav-toggle { background: rgba(255, 255, 255, 0.92); box-shadow: 0 4px 14px rgba(11, 79, 108, 0.18); }
+  .home .site-header.is-solid .nav-toggle span { background: var(--color-text); }
+  .home .site-header:has(.nav-list.open) { position: fixed; top: 0; background: #fff; border-bottom-color: var(--color-border); }
   .home .site-header:has(.nav-list.open) .logo-dark { display: block; }
-  .home .site-header.is-solid .logo-light,
   .home .site-header:has(.nav-list.open) .logo-light { display: none; }
-  .home .site-header.is-solid .nav-toggle span,
+  .home .site-header:has(.nav-list.open) .nav-toggle { background: transparent; box-shadow: none; }
   .home .site-header:has(.nav-list.open) .nav-toggle span { background: var(--color-text); }
   .home .site-header .nav-list { transition: max-height 0.25s ease, visibility 0s linear 0s; }
   .home .site-header .nav-list:not(.open) { visibility: hidden; transition: max-height 0.25s ease, visibility 0s linear 0.25s; }
-  .home .hero-live { height: max(560px, 100svh); padding-top: calc(85px + clamp(40px, 8svh, 88px)); }
+  .home .hero-live { height: max(560px, var(--hero-vh, 100svh)); padding-top: 150px; }
   .home .hero-live .hero-shade { background: linear-gradient(180deg, rgba(4, 30, 70, 0.6) 0%, rgba(4, 30, 70, 0.2) 40%, rgba(4, 30, 70, 0) 60%, rgba(4, 30, 70, 0.25) 100%); }
-}
-
-/* Home (phone): logo and menu scroll away with the photo; the photo itself stays still */
-@media (max-width: 768px) {
-  .home .site-header { position: absolute; }
   .home .hero-live .hero-photo-zoom, .home .hero-live .hero-photo-img, .home .hero-live .hero-glare { animation: none; transform: none; }
 }

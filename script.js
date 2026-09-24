@@ -241,10 +241,22 @@ void main() {
   const header = document.querySelector(".home .site-header");
   const hero = document.querySelector(".hero-live");
   if (!header || !hero) return;
+
+  // Lock the phone hero height to the first measured screen height; only re-measure when the width changes (rotation)
+  let lastW = window.innerWidth;
+  const lockHeight = () => document.documentElement.style.setProperty("--hero-vh", window.innerHeight + "px");
+  lockHeight();
+
   const update = () => {
-    header.classList.toggle("is-solid", window.scrollY > hero.offsetHeight - header.offsetHeight - 8);
+    header.classList.toggle("is-solid", window.scrollY > hero.offsetHeight - 70);
   };
   window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
+  window.addEventListener("resize", () => {
+    if (window.innerWidth !== lastW) {
+      lastW = window.innerWidth;
+      lockHeight();
+    }
+    update();
+  });
   update();
 })();
